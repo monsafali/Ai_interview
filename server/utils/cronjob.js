@@ -2,6 +2,7 @@
 const cron = require("cron");
 const https = require("https");
 
+require("dotenv").config();
 const job = new cron.CronJob("*/14 * * * *", function () {
   https
     .get(process.env.API_URL, (res) => {
