@@ -237,8 +237,9 @@ exports.evaluateAttempt = async (req, res) => {
      const raw = await callOpenAIChat({
   model: "gpt-4o-mini", // Use OpenAI model
   systemPrompt: "You are an interview generator. Return only valid JSON.",
-  userPrompt: somePrompt
+  userPrompt: userPrompt
 });
+
 
       const parsed = safeParseJson(raw) || {};
       
